@@ -14,23 +14,9 @@ import {get, save} from '../local-storage/storage';
 
 const HomeScreen = () => {
   const [themeValue, setThemeValue] = useState<ColorSchemeName>('light');
-  //   const [initialValue, setInitialValue] = useState(0);
   const [selectedId, setSelectedId] = useState<string | undefined>('light');
   const themes = useColorScheme();
-  //   const data = [
-  //     {
-  //       label: 'Light Mode',
-  //       value: 'light',
-  //     },
-  //     {
-  //       label: 'Dark Mode',
-  //       value: 'dark',
-  //     },
-  //     {
-  //       label: 'System Default',
-  //       value: 'default',
-  //     },
-  //   ];
+
 
   const data: RadioButtonProps[] = useMemo(
     () => [
@@ -113,16 +99,6 @@ const HomeScreen = () => {
         onPress={selected => themeOperations(selected)}
         selectedId={selectedId}
       />
-      {/* <RadioButtonRN
-        data={data}
-        selectedBtn={e => themeOperations(e?.value)}
-        initial={initialValue}
-        activeColor={Colors[currentTheme]?.activeColor}
-        deactiveColor={Colors[currentTheme]?.deactiveColor}
-        boxActiveBgColor={Colors[currentTheme]?.boxActiveColor}
-        boxDeactiveBgColor={Colors[currentTheme]?.themeColor}
-        textColor={Colors[currentTheme]?.white}
-      /> */}
     </View>
   );
 };
